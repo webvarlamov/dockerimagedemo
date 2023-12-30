@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
   @GetMapping
   public String get() {
+    System.out.println("Handle new request: " + System.currentTimeMillis());
     return "Hello from Docker!";
   }
 }
