@@ -1,0 +1,120 @@
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(10, 24, 37, 1);
+}
+
+html {
+    background-color: black;
+    height: 100%;
+}
+
+* {
+    font-family: -apple-system, sans-serif !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    color: white;
+}
+
+div#app {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: auto;
+    width: 100%;
+}
+
+div#message-list-wrapper {
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 0 30px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+div.message-list-item {
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #3992e329;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+div.message-list-item-meta {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+span.message-list-item-username {
+    font-weight: bold;
+}
+
+span.message-list-item-service-uuid, div.message-list-item-date {
+    color: #ffffff45;
+    font-size: 13px;
+}
+
+div.message-input-wrapper {
+    flex-grow: 0;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    gap: 10px;
+    padding: 15px 30px;
+}
+
+div.message-input-wrapper input {
+    flex-grow: 1;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: 1px solid #26aae7;
+    font-size: 16px;
+    border-radius: 40px;
+}
+
+div.message-input-wrapper button {
+    background-color: #26aae7;
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background-image: url("send_message.png");
+    background-position: center;
+    background-size: contain;
+}
+
+div#message-list-header {
+    padding: 0 30px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+}
+
+div#message-list-header img {
+    height: 24px;
+    width: 24px;
+}

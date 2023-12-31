@@ -1,1 +1,1 @@
-docker build --no-cache -t cr.yandex/ajes9m23bstmjo3ltpvb/dockerimagedemo:0.0.7 .
+docker build --no-cache -t cr.yandex/crp3g2ebtfsh3buhv6q0/dockerimagedemo:0.0.8 .
