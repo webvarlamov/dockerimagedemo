@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_DB=messages
+      - POSTGRES_USER=messages
+      - POSTGRES_PASSWORD=messages
+    volumes:
+      - ./initdb:/docker-entrypoint-initdb.d
+    ports:
+      - '5437:5432'
+
+  chat:
+    image: cr.yandex/crp3g2ebtfsh3buhv6q0/dockerimagedemo
+    restart: always
+    ports:
+      - '80:8080'
+
+volumes:
+  db:
+    driver: local
