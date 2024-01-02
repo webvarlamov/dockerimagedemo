@@ -2,6 +2,8 @@ version: '3.8'
 
 services:
   db:
+    hostname: db
+    container_name: db
     image: postgres:latest
     restart: always
     environment:
@@ -14,8 +16,16 @@ services:
       - '5437:5432'
 
   chat:
-    image: cr.yandex/crp3g2ebtfsh3buhv6q0/dockerimagedemo
+    hostname: chat
+    container_name: chat
+    image: cr.yandex/crp3g2ebtfsh3buhv6q0/dockerimagedemo:0.0.12
     restart: always
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: messages
+      DB_PASSWORD: messages
+      DB_NAME: messages
     ports:
       - '80:8080'
 
