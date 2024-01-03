@@ -2,8 +2,6 @@ version: '3.8'
 
 services:
   db:
-    hostname: db
-    container_name: db
     image: postgres:latest
     restart: always
     environment:
@@ -16,8 +14,6 @@ services:
       - '5437:5432'
 
   chat:
-    hostname: chat
-    container_name: chat
     image: dockerimagedemo:0.0.1
     restart: always
     environment:
