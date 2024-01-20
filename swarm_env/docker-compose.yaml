@@ -2,10 +2,7 @@ version: '3.8'
 
 services:
   db:
-    hostname: db
-    container_name: db
     image: postgres:latest
-    restart: always
     environment:
       - POSTGRES_DB=messages
       - POSTGRES_USER=messages
@@ -14,12 +11,14 @@ services:
       - ./initdb:/docker-entrypoint-initdb.d
     ports:
       - '5437:5432'
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.hostname == school-example-1
 
   chat:
-    hostname: chat
-    container_name: chat
     image: cr.yandex/crp3g2ebtfsh3buhv6q0/dockerimagedemo:0.0.14
-    restart: always
     environment:
       DB_HOST: db
       DB_PORT: 5432
@@ -28,6 +27,8 @@ services:
       DB_NAME: messages
     ports:
       - '80:8080'
+    deploy:
+      replicas: 3
 
 volumes:
   db:

@@ -51,11 +51,10 @@ div.message-list-item {
     box-sizing: border-box;
     padding: 10px;
     margin-bottom: 5px;
-    background-color: #3992e329;
-    border-radius: 5px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    border-radius: 5px;
 }
 
 div.message-list-item-meta {
@@ -63,13 +62,14 @@ div.message-list-item-meta {
     flex-direction: row;
     gap: 10px;
     align-items: center;
+    justify-content: space-between;
 }
 
 span.message-list-item-username {
     font-weight: bold;
 }
 
-span.message-list-item-service-uuid, div.message-list-item-date {
+div.message-list-item-date {
     color: #ffffff45;
     font-size: 13px;
 }
@@ -117,4 +117,39 @@ div#message-list-header {
 div#message-list-header img {
     height: 24px;
     width: 24px;
+}
+
+div.cameron {
+    background: linear-gradient(to right, rgba(116, 64, 198, 0.1), rgba(116, 64, 198, 0.3));
+}
+div.cameron span.message-list-item-username {
+    color: rgba(116, 64, 198,1);
+}
+
+div.ritchie {
+    background: linear-gradient(to right, rgba(220, 98, 174, 0.1), rgba(220, 98, 174, 0.3));
+}
+div.ritchie span.message-list-item-username {
+    color: rgba(220, 98, 174, 1);
+}
+
+div.tarantino {
+    background: linear-gradient(to right, rgba(51, 179, 174, 0.1), rgba(51, 179, 174, 0.3));
+}
+div.tarantino span.message-list-item-username {
+    color: rgba(51, 179, 174, 1)
+}
+
+div.coen {
+    background: linear-gradient(to right, rgba(63, 185, 80, 0.1), rgba(63, 185, 80, 0.3));
+}
+div.coen span.message-list-item-username {
+    color: rgba(63, 185, 80, 1)
+}
+
+div.scorsese {
+    background: linear-gradient(to right, rgba(132, 226, 230, 0.1), rgba(132, 226, 230, 0.3));
+}
+div.scorsese span.message-list-item-username {
+    color: rgba(132, 226, 230, 1);
 }

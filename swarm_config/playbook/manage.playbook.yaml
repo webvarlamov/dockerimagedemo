@@ -1,0 +1,18 @@
+---
+- name: Deploy to swarm
+  hosts: manager_node
+
+  tasks:
+  - name: Copy docker-compose swarm file to remote
+    become: true
+    ansible.builtin.copy:
+      src: /Users/web.varlamov/IdeaProjects/dockerimagedemo/swarm_env
+      dest: /home/webvarlamov/dockerimagedemo
+
+  - name: Docker stack rm
+    become: true
+    ansible.builtin.raw: docker stack rm dockerimagedemo_stack
+
+  - name: Docker stack deploy
+    become: true
+    ansible.builtin.raw: docker stack deploy --compose-file /home/webvarlamov/dockerimagedemo/swarm_env/docker-compose.yaml dockerimagedemo_stack

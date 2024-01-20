@@ -12,13 +12,13 @@ const app = Vue.createApp({
         </div>
         <div id="message-list-wrapper">
             <div class="message-list">
-                <div class="message-list-item" v-for="message in messages" :key="message.messageId">
+                <div class="message-list-item" v-bind:class="message.serviceUuid" v-for="message in messages" :key="message.messageId">
                     <div class="message-list-item-meta">
-                        <span class="message-list-item-username" v-bind:style="{'color': message.serviceUuid}">
+                        <span class="message-list-item-username">
                             {{message.userName}}
                         </span>
                         <span class="message-list-item-service-uuid">
-                            {{message.serviceUuid}}
+                            Service name: {{message.serviceUuid}}
                         </span>
                     </div>
                     <div class="message-list-item-payload">
@@ -46,7 +46,7 @@ const app = Vue.createApp({
     methods: {
         isMessageListScrollOnDown() {
             const messageListWrapper = document.getElementById("message-list-wrapper");
-            return messageListWrapper.scrollTop === 0;
+            return messageListWrapper.scrollTop >= 0;
         },
         scrollMessageListToBottom() {
             const messageListWrapper = document.getElementById("message-list-wrapper");

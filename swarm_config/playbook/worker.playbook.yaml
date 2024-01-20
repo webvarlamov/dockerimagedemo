@@ -1,0 +1,18 @@
+---
+- name: Deploy to swarm
+  hosts: worker_node
+
+  tasks:
+  - name: Auth to Cloud Registry
+    become: true
+    ansible.builtin.raw: docker login --username oauth --password y0_AgAAAAAcLcNaAATuwQAAAADePotPnbNvOqaoSbi5kwmM6u538Kc4Ke0 cr.yandex
+
+  - name: Pull postgress image
+    community.docker.docker_image:
+      name: postgres
+      source: pull
+
+  - name: Pull dockerimagedemo image
+    community.docker.docker_image:
+      name: cr.yandex/crp3g2ebtfsh3buhv6q0/dockerimagedemo:0.0.14
+      source: pull

@@ -10,21 +10,24 @@ public class DockerimagedemoApplication {
 	public final static String SERVICE_UUID = getRandomServiceColor();
 
 	private static String getRandomServiceColor() {
-		List<String> colors = List.of(
-				"#175E54",
-				"#279989",
-				"#A6B168",
-				"#E98300",
-				"#F4795B",
-				"#FFE781",
-				"#C74632",
-				"#FEC51D",
-				"#DAD7CB",
-				"#8F993E"
+		List<String> surname = List.of(
+				"cameron",
+				"ritchie",
+				"tarantino",
+				"coen",
+				"scorsese"
+		);
+
+		List<String> names = List.of(
+				"\uD83E\uDD2C",
+				"\uD83E\uDD10",
+				"\uD83E\uDD13",
+				"\uD83D\uDE0E",
+				"\uD83E\uDD76"
 		);
 
 		Random randomizer = new Random();
-		return colors.get(randomizer.nextInt(colors.size()));
+		return names.get(randomizer.nextInt(surname.size())) + " " + surname.get(randomizer.nextInt(names.size()));
 	}
 
 	public static void main(String[] args) {
