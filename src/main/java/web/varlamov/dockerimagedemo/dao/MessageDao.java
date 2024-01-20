@@ -23,7 +23,7 @@ public class MessageDao {
 
   public List<MessageEntity> getLastMessages(int limit) {
     return jdbcTemplate.query("""
-        select message_id, session_uuid, service_uuid, user_name, payload, dateTime from message order by dateTime asc limit %d
+        select message_id, session_uuid, service_uuid, user_name, payload, dateTime from message order by dateTime desc limit %d
         """.formatted(limit), new BeanPropertyRowMapper<>(MessageEntity.class));
   }
 }

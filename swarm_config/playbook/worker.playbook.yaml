@@ -14,5 +14,5 @@
 
   - name: Pull dockerimagedemo image
     community.docker.docker_image:
-      name: cr.yandex/crp3g2ebtfsh3buhv6q0/dockerimagedemo:0.0.14
+      name: cr.yandex/crp3g2ebtfsh3buhv6q0/dockerimagedemo:0.0.15
       source: pull

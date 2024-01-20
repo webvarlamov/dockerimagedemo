@@ -61,8 +61,8 @@ const app = Vue.createApp({
         loadMessages() {
             fetch("/message/getMessages")
                 .then(response => response.json())
-                .then(json => {
-                     const messages = json.map(message => {
+                .then(messages_array => {
+                     const messages = messages_array.reverse().map(message => {
                         const dateTime = message.dateTime.split("T");
                         const date = dateTime[0].split("-").reverse().join(".");
                         const time = dateTime[1].split(".")[0];
