@@ -18,7 +18,7 @@ services:
   chat:
     hostname: chat
     container_name: chat
-    image: cr.yandex/crp3g2ebtfsh3buhv6q0/dockerimagedemo:0.0.15
+    image: cr.yandex/crp3g2ebtfsh3buhv6q0/dockerimagedemo:0.0.16
     restart: always
     environment:
       DB_HOST: db
