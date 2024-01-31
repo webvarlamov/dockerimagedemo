@@ -1,0 +1,19 @@
+---
+- name: Deploy portainer to swarm
+  hosts: manager_node
+
+  tasks:
+    - name: Make portainer stack directory
+      ansible.builtin.file:
+        path: /home/webvarlamov/portainer
+        state: directory
+
+    - name: Download portainer stack
+      become: true
+      get_url:
+        url: https://downloads.portainer.io/ce2-19/portainer-agent-stack.yml
+        dest: /home/webvarlamov/portainer/portainer-agent-stack.yml
+
+    - name: Deploy portainer stack
+      become: true
+      ansible.builtin.raw: docker stack deploy --compose-file /home/webvarlamov/portainer/portainer-agent-stack.yml portainer

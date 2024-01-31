@@ -10,6 +10,7 @@ services:
       - POSTGRES_PASSWORD=messages
     volumes:
       - ./initdb:/docker-entrypoint-initdb.d
+      - db:/var/lib/postgresql/data
     ports:
       - '5437:5432'
 
