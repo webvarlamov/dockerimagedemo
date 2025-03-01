@@ -44,11 +44,7 @@
     become: true
     apt: name={{ item }} state=latest update_cache=yes
     loop: ['python3-pip', 'virtualenv', 'python3-setuptools']
-
-  - name: Install Docker Module for Python
-    become: true
-    pip:
-      name: docker
+    ignore_errors: yes
 
   - name: Install docker-compose
     become: true

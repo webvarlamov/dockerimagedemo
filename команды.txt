@@ -1,0 +1,5 @@
+Подключение к виртуалкам по ssh
+
+ssh -i ~/school-example webvarlamov@51.250.9.160
+ssh -i ~/school-example webvarlamov@158.160.42.20
+ssh -i ~/school-example webvarlamov@158.160.33.183

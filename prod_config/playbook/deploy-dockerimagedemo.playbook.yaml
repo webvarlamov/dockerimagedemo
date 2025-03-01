@@ -6,7 +6,7 @@
   - name: Copy docker-compose file to remote
     become: true
     ansible.builtin.copy:
-      src: /Users/web.varlamov/IdeaProjects/dockerimagedemo/prod_env
+      src: /Users/r.varlamov/IdeaProjects/dockerimagedemo/prod_env
       dest: /home/webvarlamov/dockerimagedemo
 
   - name: Auth to Cloud Registry
@@ -15,11 +15,11 @@
 
   - name: Docker compose down
     become: true
-    ansible.builtin.raw: docker-compose --file /home/webvarlamov/dockerimagedemo/prod_env/docker-compose.yaml down
+    ansible.builtin.raw: docker-compose --file /home/webvarlamov/dockerimagedemo/prod_env/docker-compose.yml down
 
   - name: Docker compose up
     become: true
-    ansible.builtin.raw: docker-compose --file /home/webvarlamov/dockerimagedemo/prod_env/docker-compose.yaml up -d
+    ansible.builtin.raw: docker-compose --file /home/webvarlamov/dockerimagedemo/prod_env/docker-compose.yml up -d
 
 
 

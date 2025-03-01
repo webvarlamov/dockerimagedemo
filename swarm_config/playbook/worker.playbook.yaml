@@ -7,12 +7,14 @@
     become: true
     ansible.builtin.raw: docker login --username oauth --password y0_AgAAAAAcLcNaAATuwQAAAAD6kJuXAADV7-ekdjNExrRqIw3h85lPb94i6Q cr.yandex
 
-  - name: Pull postgress image
+  - name: Pull postgres image
+    become: true
     community.docker.docker_image:
-      name: postgres
+      name: postgres:latest
       source: pull
 
   - name: Pull dockerimagedemo image
+    become: true
     community.docker.docker_image:
-      name: cr.yandex/crp3g2ebtfsh3buhv6q0/dockerimagedemo:0.0.16
+      name: cr.yandex/crp3g2ebtfsh3buhv6q0/dockerimagedemo:0.0.1
       source: pull
