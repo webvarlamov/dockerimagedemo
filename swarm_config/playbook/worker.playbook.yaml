@@ -5,7 +5,7 @@
   tasks:
   - name: Auth to Cloud Registry
     become: true
-    ansible.builtin.raw: docker login --username oauth --password y0_AgAAAAAcLcNaAATuwQAAAADePotPnbNvOqaoSbi5kwmM6u538Kc4Ke0 cr.yandex
+    ansible.builtin.raw: docker login --username oauth --password y0_AgAAAAAcLcNaAATuwQAAAAD6kJuXAADV7-ekdjNExrRqIw3h85lPb94i6Q cr.yandex
 
   - name: Pull postgress image
     community.docker.docker_image:
